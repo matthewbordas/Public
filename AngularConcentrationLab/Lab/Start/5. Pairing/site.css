@@ -1,0 +1,42 @@
+﻿body
+{
+    font-family: 'Segoe UI';
+}
+
+.card-row {
+    display:block;
+}
+
+.card {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+    background: lightgray;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.card.revealed {
+    background-color: #134f7c;
+    color: white;    
+}
+
+.card.matched {
+    background-color: #137c15;
+    color: white;    
+}
+
+.card.mismatched {
+    background-color: #7c2313;
+    color: white;    
+}
+
+.card-value {
+    display: none;
+}
+
+.card-value.revealed {
+    display: block;
+}

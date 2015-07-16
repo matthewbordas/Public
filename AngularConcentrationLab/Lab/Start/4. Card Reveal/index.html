@@ -1,0 +1,22 @@
+﻿<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Concentration - Card Reveal</title>
+    <link href="site.css" rel="stylesheet" />
+</head>
+<body ng-app="concentrationApp">
+    <div ng-controller="MainCtrl">
+        <div class="card-grid">
+            <div class="card-row" ng-repeat="row in cardGrid">
+                <div class="card" ng-repeat="card in row">
+                    <div class="card-value">{{card.value + 1}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.1/angular.min.js"></script>
+    <script type="text/javascript" src="underscore-min.js"></script>
+    <script type="text/javascript" src="site.js"></script>
+</body>
+</html>
+

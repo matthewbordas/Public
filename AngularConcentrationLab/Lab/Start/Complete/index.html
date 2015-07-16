@@ -1,0 +1,38 @@
+﻿<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Concentration - Pair Reveal</title>
+    <link href="site.css" rel="stylesheet" />
+</head>
+<body ng-app="concentrationApp">
+    <div class="concentration" ng-controller="MainCtrl">        
+        <scoreboard></scoreboard>
+        <div class="card-grid">
+            <div class="card-row" ng-repeat="row in cardGrid">
+                <div class="card" ng-repeat="card in row" ng-class="{revealed: card.revealed, matched: card.matched, mismatched: card.mismatched}" ng-click="toggleCard(card)">
+                    <div class="card-value" ng-class="{revealed: card.revealed}">{{card.value + 1}}</div>
+                </div>
+            </div>
+        </div>
+        <button class="start-game-action" ng-click="startGame()">Start</button>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.1/angular.min.js"></script>
+    <script type="text/javascript" src="underscore-min.js"></script>
+    <script type="text/javascript" src="site.js"></script>
+
+    <script type="text/ng-template" id="scoreboard.html">
+        <div class="scoreboard">
+            <player player="player1" current-player="currentPlayer"></player>
+            <player player="player2" current-player="currentPlayer"></player>            
+        </div>
+    </script>
+
+    <script type="text/ng-template" id="player.html">
+        <div class="player" ng-class="{active: player == currentPlayer}">
+            <div class="player-name">{{player.name}}</div>
+            <div class="player-score">{{player.score}}</div>
+        </div>
+    </script>
+</body>
+</html>
+
